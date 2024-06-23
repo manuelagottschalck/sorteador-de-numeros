@@ -1,9 +1,12 @@
 function sortear() {
-    let quantidade = document.getElementById('quantidade').value;
-    let de = document.getElementById('de').value;
-    let ate = document.getElementById("ate").value;
+    let quantidade = parseInt(document.getElementById('quantidade').value); //parse int para forçar o numero de entrada como int
+    let de = parseInt(document.getElementById('de').value);
+    let ate = parseInt(document.getElementById("ate").value);
 
-    alert("Quantidade: " + quantidade);
-    alert("Do número: " + de);
-    alert("Até o número: " + ate);
+    let numero = obterNumerosAleatorios(de, ate);
+    alert(numero);
 }
+
+function obterNumerosAleatorios(min, max){
+    return Math.floor(Math.random() * (max - min) + min);
+}   
